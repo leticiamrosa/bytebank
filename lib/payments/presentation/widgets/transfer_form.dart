@@ -1,4 +1,5 @@
 import 'package:bytebank/payments/model/transaction.dart';
+import 'package:bytebank/payments/presentation/widgets/transaction_input.dart';
 import 'package:flutter/material.dart';
 
 class TransferForm extends StatelessWidget {
@@ -9,44 +10,35 @@ class TransferForm extends StatelessWidget {
 
   TransferForm({super.key});
 
+  void createTransfer() {
+    final int? accountNumber = int.tryParse(controllerAccountNumberField.text);
+    final double? value = double.tryParse(controllerValueField.text);
+
+    if (accountNumber != null && value != null) {
+      final newTransaction = Transaction(value, accountNumber);
+      debugPrint('$newTransaction');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Padding(
-          padding: const EdgeInsets.fromLTRB(16.0, 8.0, 16.0, 8.0),
-          child: TextField(
-            style: const TextStyle(fontSize: 24.0),
-            decoration: const InputDecoration(
-                labelText: 'Numero conta', hintText: '0000'),
-            keyboardType: TextInputType.number,
+        TransactionInput(
             controller: controllerAccountNumberField,
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.fromLTRB(16.0, 4.0, 16.0, 4.0),
-          child: TextField(
-            style: const TextStyle(fontSize: 24.0),
-            decoration: const InputDecoration(
-                labelText: 'Valor',
-                hintText: '0.00',
-                icon: Icon(Icons.monetization_on)),
-            keyboardType: TextInputType.number,
-            controller: controllerValueField,
-          ),
+            labelText: 'Numero conta',
+            hintText: '0000'),
+        TransactionInput(
+          controller: controllerValueField,
+          labelText: 'Valor',
+          hintText: '0.00',
+          icon: const Icon(Icons.monetization_on),
         ),
         Padding(
           padding: const EdgeInsets.fromLTRB(16.0, 24.0, 16.0, 8.0),
           child: ElevatedButton(
             onPressed: () {
-              final int? accountNumber =
-                  int.tryParse(controllerAccountNumberField.text);
-              final double? value = double.tryParse(controllerValueField.text);
-
-              if (accountNumber != null && value != null) {
-                final newTransaction = Transaction(value, accountNumber);
-                debugPrint('$newTransaction');
-              }
+              createTransfer();
             },
             child: const Text('Confirmar'),
           ),
