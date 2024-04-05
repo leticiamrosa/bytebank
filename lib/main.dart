@@ -1,22 +1,27 @@
-import 'package:bytebank/payments/presentation/widgets/transaction_list.dart';
+import 'package:bytebank/payments/presentation/screens/transfer_screen.dart';
 import 'package:flutter/material.dart';
 
 const primaryColor = Color.fromARGB(255, 8, 122, 4);
 
 void main() {
-  runApp(MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primaryColor: primaryColor,
-      ),
-      home: Scaffold(
-          appBar: AppBar(
-            title: const Text('Transferências'),
-            backgroundColor: primaryColor,
+  runApp(const BytebankApp());
+}
+
+class BytebankApp extends StatelessWidget {
+  const BytebankApp({super.key});
+
+  static const primaryColor = Color.fromARGB(255, 21, 63, 177);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          appBarTheme: AppBarTheme(
+            elevation: 4.0,
+            shadowColor: Theme.of(context).colorScheme.shadow,
           ),
-          floatingActionButton: FloatingActionButton(
-            onPressed: () {},
-            child: const Icon(Icons.add),
-          ),
-          body: const TransactionList())));
+        ),
+        home: const Scaffold(body: TransferScreen()));
+  }
 }

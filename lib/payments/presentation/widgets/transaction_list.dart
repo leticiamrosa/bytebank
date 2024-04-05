@@ -9,7 +9,7 @@ class TransactionList extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Column(
       children: [
-        TransactionCard(Transaction(100, 35602)),
+        TransactionCard(Transaction(1020, 35602)),
         TransactionCard(Transaction(200, 35601)),
         TransactionCard(Transaction(300, 35603)),
         TransactionCard(Transaction(400, 35606)),
