@@ -9,7 +9,7 @@ class TransferScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: const TransferForm(),
+      body: TransferForm(),
       appBar: AppBar(
         backgroundColor: primaryColor,
         title: const Text(
