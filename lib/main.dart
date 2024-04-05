@@ -1,4 +1,4 @@
-import 'package:bytebank/payments/presentation/screens/transfer_screen.dart';
+import 'package:bytebank/payments/presentation/screens/transactions_screen.dart';
 import 'package:flutter/material.dart';
 
 const primaryColor = Color.fromARGB(255, 8, 122, 4);
@@ -22,6 +22,6 @@ class BytebankApp extends StatelessWidget {
             shadowColor: Theme.of(context).colorScheme.shadow,
           ),
         ),
-        home: const Scaffold(body: TransferScreen()));
+        home: const Scaffold(body: TransactionsScreen()));
   }
 }

@@ -10,13 +10,14 @@ class TransferForm extends StatelessWidget {
 
   TransferForm({super.key});
 
-  void createTransfer() {
+  void createTransfer(context) {
     final int? accountNumber = int.tryParse(controllerAccountNumberField.text);
     final double? value = double.tryParse(controllerValueField.text);
 
     if (accountNumber != null && value != null) {
       final newTransaction = Transaction(value, accountNumber);
       debugPrint('$newTransaction');
+      Navigator.pop(context, newTransaction);
     }
   }
 
@@ -38,7 +39,7 @@ class TransferForm extends StatelessWidget {
           padding: const EdgeInsets.fromLTRB(16.0, 24.0, 16.0, 8.0),
           child: ElevatedButton(
             onPressed: () {
-              createTransfer();
+              createTransfer(context);
             },
             child: const Text('Confirmar'),
           ),
