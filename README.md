@@ -2,6 +2,8 @@
 
 A new Flutter project.
 
+![Project print](./ezgif-2-e61607b010.gif);
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
