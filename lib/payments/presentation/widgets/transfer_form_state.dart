@@ -52,7 +52,11 @@ class TransactionFormState extends State<TransferForm> {
           ),
           Padding(
             padding: const EdgeInsets.fromLTRB(16.0, 24.0, 16.0, 8.0),
-            child: ElevatedButton(
+            child: FilledButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor:
+                    Colors.blue.shade800, // Defina a cor do botão aqui
+              ),
               onPressed: () {
                 createTransfer(context);
               },

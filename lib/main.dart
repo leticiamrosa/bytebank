@@ -15,13 +15,18 @@ class BytebankApp extends StatelessWidget {
     return MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
+          primaryColor: primaryColor,
           appBarTheme: AppBarTheme(
-            backgroundColor: primaryColor,
+            backgroundColor: Colors.blue.shade700,
             elevation: 4.0,
             shadowColor: Theme.of(context).colorScheme.shadow,
             iconTheme: const IconThemeData(
               color: Colors.white,
             ),
+          ),
+          floatingActionButtonTheme: FloatingActionButtonThemeData(
+            foregroundColor: Colors.white,
+            backgroundColor: Colors.blue.shade800,
           ),
         ),
         home: const Scaffold(body: TransactionsScreen()));
