@@ -2,9 +2,9 @@ import 'package:bytebank/payments/model/transaction.dart';
 import 'package:flutter/material.dart';
 
 class TransactionCard extends StatelessWidget {
-  final Transaction transaction;
-
   const TransactionCard(this.transaction, {super.key});
+
+  final Transaction transaction;
 
   @override
   Widget build(BuildContext context) {
