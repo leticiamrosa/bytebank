@@ -5,7 +5,6 @@ import 'package:bytebank/payments/presentation/widgets/transaction_list.dart';
 import 'package:flutter/material.dart';
 
 class TransactionListState extends State<TransactionList> {
-  static const primaryColor = Color.fromARGB(255, 21, 63, 177);
   final List<Transaction> transactions = [];
 
   void onPressedFloatingActionButton(BuildContext context) {
@@ -35,7 +34,6 @@ class TransactionListState extends State<TransactionList> {
         },
       ),
       appBar: AppBar(
-        backgroundColor: primaryColor,
         title: const Text(
           'Transferencias',
           style: TextStyle(
