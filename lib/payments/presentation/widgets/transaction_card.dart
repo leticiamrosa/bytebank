@@ -10,9 +10,15 @@ class TransactionCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
         child: ListTile(
-      leading: const Icon(Icons.monetization_on),
-      title: Text(transaction.value.toString()),
-      subtitle: Text(transaction.accountNumber.toString()),
+      leading: const Icon(
+        Icons.monetization_on,
+        color: Colors.green,
+      ),
+      title: Text('R\$ ${transaction.value.toString()}'),
+      subtitle: Text(
+        'Número conta ${transaction.accountNumber.toString()}',
+        style: const TextStyle(fontWeight: FontWeight.w600),
+      ),
     ));
   }
 }
