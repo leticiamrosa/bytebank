@@ -23,28 +23,30 @@ class TransferForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        TransactionInput(
-            controller: controllerAccountNumberField,
-            labelText: 'Numero conta',
-            hintText: '0000'),
-        TransactionInput(
-          controller: controllerValueField,
-          labelText: 'Valor',
-          hintText: '0.00',
-          icon: const Icon(Icons.monetization_on),
-        ),
-        Padding(
-          padding: const EdgeInsets.fromLTRB(16.0, 24.0, 16.0, 8.0),
-          child: ElevatedButton(
-            onPressed: () {
-              createTransfer(context);
-            },
-            child: const Text('Confirmar'),
+    return SingleChildScrollView(
+      child: Column(
+        children: <Widget>[
+          TransactionInput(
+              controller: controllerAccountNumberField,
+              labelText: 'Numero conta',
+              hintText: '0000'),
+          TransactionInput(
+            controller: controllerValueField,
+            labelText: 'Valor',
+            hintText: '0.00',
+            icon: const Icon(Icons.monetization_on),
           ),
-        )
-      ],
+          Padding(
+            padding: const EdgeInsets.fromLTRB(16.0, 24.0, 16.0, 8.0),
+            child: ElevatedButton(
+              onPressed: () {
+                createTransfer(context);
+              },
+              child: const Text('Confirmar'),
+            ),
+          )
+        ],
+      ),
     );
   }
 }
