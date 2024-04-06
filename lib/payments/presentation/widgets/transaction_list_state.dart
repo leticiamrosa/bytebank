@@ -15,12 +15,11 @@ class TransactionListState extends State<TransactionList> {
     }));
 
     future.then((newTransaction) {
-      debugPrint('chegou no future na tela de listagem');
-      debugPrint('$newTransaction');
-
-      setState(() {
-        transactions.add(newTransaction!);
-      });
+      if (newTransaction != null) {
+        setState(() {
+          transactions.add(newTransaction);
+        });
+      }
     });
   }
 
@@ -30,11 +29,8 @@ class TransactionListState extends State<TransactionList> {
       body: ListView.builder(
         itemCount: transactions.length,
         itemBuilder: (context, index) {
-          debugPrint('aqui list view');
-          debugPrint('valor do transaction $index');
           final Transaction transaction = transactions[index];
 
-          debugPrint('valor $transaction dentro do list view');
           return TransactionCard(transaction);
         },
       ),

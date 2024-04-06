@@ -12,6 +12,9 @@ class TransferScreen extends StatelessWidget {
       body: TransferForm(),
       appBar: AppBar(
         backgroundColor: primaryColor,
+        iconTheme: const IconThemeData(
+          color: Colors.white,
+        ),
         title: const Text(
           'Transferir',
           style: TextStyle(

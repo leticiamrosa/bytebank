@@ -14,15 +14,10 @@ class TransferForm extends StatelessWidget {
     final int? accountNumber = int.tryParse(controllerAccountNumberField.text);
     final double? value = double.tryParse(controllerValueField.text);
 
-    debugPrint('passei aqui no submit com o valor $accountNumber $value');
-
     if (accountNumber != null && value != null) {
       final newTransaction = Transaction(value, accountNumber);
-      debugPrint('$newTransaction');
 
-      Future.delayed(const Duration(milliseconds: 600), () {
-        Navigator.pop(context, newTransaction);
-      });
+      Navigator.pop(context, newTransaction);
     }
   }
 
